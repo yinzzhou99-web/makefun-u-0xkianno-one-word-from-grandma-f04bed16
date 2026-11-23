@@ -10,6 +10,9 @@ import os
 
 WORD = "Alexa"
 
+if not WORD or any(ch.isspace() for ch in WORD):
+    raise ValueError("entry must be exactly one word")
+
 OUT_DIR = "/output"
 OUT_FILE = os.path.join(OUT_DIR, "entry.txt")
 
